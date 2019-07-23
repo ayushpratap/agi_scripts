@@ -1,26 +1,13 @@
-
 ```
 agi_scripts
-├─ .git
-├─ grant_token.sh
-├─ phpagi-asmanager.php
-├─ phpagi-fastagi.php
-├─ phpagi.php
-└─ token.pl
-
-```
-```
-agi_scripts
-├─ .git
-├─ README.md
 ├─ Sounds
-│  ├─ alexa_another.sln
-│  ├─ alexa_example.sln
-│  └─ alexa_hello.sln
-├─ grant_token.sh
-├─ phpagi-asmanager.php
-├─ phpagi-fastagi.php
-├─ phpagi.php
-└─ token.pl
+│  ├─ alexa_another.sln     //  Alexa audio
+│  ├─ alexa_example.sln     //  Alexa audio 
+│  └─ alexa_hello.sln       //  Alexa audio 
+├─ grant_token.sh           //  Get the refresh token
+├─ phpagi-asmanager.php     //  Part of PHPAGI library
+├─ phpagi-fastagi.php       //  Part of PHPAGI library
+├─ phpagi.php               //  Part of PHPAGI library
+└─ token.pl                 //  Get the access token
 
 ```
