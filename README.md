@@ -9,5 +9,4 @@ agi_scripts
 ├─ phpagi-fastagi.php       //  Part of PHPAGI library
 ├─ phpagi.php               //  Part of PHPAGI library
 └─ token.pl                 //  Get the access token
-
 ```
