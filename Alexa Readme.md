@@ -167,7 +167,7 @@ $ nvm install node
 $ sudo apt-get install -y asterisk
 ```
 ----------------
-11.	Julius
+11.	Julius (missing instruction)
 ----------------
 12.	Perl
 ```
@@ -218,7 +218,6 @@ $ sudo apt-get install perl
 	$ sudo cp phpagi-fastagi.php /usr/share/asterisk/agi-bin/phpagi-fastagi.php
 	$ sudo cp phpagi /usr/share/asterisk/agi-bin/phpagi.php
 	```
-### Checkout client service code
 ### Register the product with AVS
 
 #### 1.	Create an Amazon developer account
@@ -372,5 +371,5 @@ You are now ready to try out your Asterisk Alexa interface.
 ### Setup AGI
 	
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA2MDA0Njc2OSwyMTE4OTQzMDI3XX0=
+eyJoaXN0b3J5IjpbMjExODk0MzAyN119
 -->
