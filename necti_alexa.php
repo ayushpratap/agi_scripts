@@ -89,7 +89,7 @@ $destination = $result['Extension'];
 
 //curl example : curl -d '{"source":"112",","destination":"111"} ' -H "Content-Type: application/json" -X POST http://127.0.0.1:8443/api/makeCall
 //heredoc string for curl command
-/*
+
 $cmd = <<<TEXT
 curl -d '{"source":"
 TEXT;
@@ -102,12 +102,12 @@ $cmd .= <<<TEXT
 "}' -H "Content-Type: application/json" -X POST http://127.0.0.1:8443/api/makeCall
 TEXT;
 $res=shell_exec($cmd);
-*/
+
 
 #	call transfer
 
 //$agi->exec('Goto',"sv9100-exten,".$destination.",1");
-$agi->exec('DIAL',"SIP/10.0.97.35/".$destination.",60");
+//$agi->exec('DIAL',"SIP/10.0.97.35/".$destination.",60");
 
 
 
