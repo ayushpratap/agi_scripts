@@ -217,8 +217,8 @@ $ sudo cp phpagi-fastagi.php /usr/share/asterisk/agi-bin/phpagi-fastagi.php
 $ sudo cp phpagi /usr/share/asterisk/agi-bin/phpagi.php
 ```
 Edit the `/etc/asterisk/extensions.conf` file and apend the the following code in that file.
-
->; AMAZON ALEXA VOICE
+```
+; AMAZON ALEXA VOICE
 [alexa_tts]
 exten => 5555,1,Answer()
 ; Get an AWS Token
@@ -231,14 +231,15 @@ exten => 5555,n(record),agi(alexa.agi,en-us)
 ; Loop
 exten => 5555,n,Playback(./custom/alexa_another)
 exten => 5555,n,goto(record)
-
+```
 Add the following line to extensions.conf so that the extension is dial-able locally.
 -	Edit /etc/asterisk/extensions.conf
 -	Locate the section called [local]
 -	Add a line “include => alexa_tts”
 
 Edit the `/etc/asterisk/sip.conf` file and apend the the following code in that file.
->[5555]
+```
+[5555]
 type=friend
 username=5555
 fromuser=5555
@@ -254,7 +255,7 @@ progressinband=no
 nat=no
 mailbox=5555
 callerid=5555
-
+```
 **Reboot the machine**
 
 ### Register the product with AVS
@@ -436,5 +437,5 @@ Start the tcp-http client
 $ node client.js
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk4NzM5NjIwMF19
+eyJoaXN0b3J5IjpbMTEzNDYyMzY3NF19
 -->
