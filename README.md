@@ -186,17 +186,17 @@ $ cd alexa_inegration/agi
 ```
 Following files should be present
 ```
-	agi
+agi
 	├─ Sounds
-	│  ├─ alexa_another.sln     //  Alexa audio
-	│  ├─ alexa_example.sln     //  Alexa audio 
-	│  └─ alexa_hello.sln       //  Alexa audio 
-	├─ grant_token.sh           //  Get the refresh token
-	├─ necti.php                //  Main AGI script
-	├─ phpagi-asmanager.php     //  Part of PHPAGI library
-	├─ phpagi-fastagi.php       //  Part of PHPAGI library
-	├─ phpagi.php               //  Part of PHPAGI library
-	└─ token.pl                 //  Get the access token
+	│  ├─ alexa_another.sln     	//  Alexa audio
+	│  ├─ alexa_example.sln     	//  Alexa audio 
+	│  └─ alexa_hello.sln       	//  Alexa audio 
+	├─ grant_token.sh           	//  Get the refresh token
+	├─ necti.php                	//  Main AGI script
+	├─ phpagi-asmanager.php     	//  Part of PHPAGI library
+	├─ phpagi-fastagi.php       	//  Part of PHPAGI library
+	├─ phpagi.php               	//  Part of PHPAGI library
+	└─ token.pl                 	//  Get the access token
 ```
 Copy the sound files
 ```
@@ -436,5 +436,5 @@ Start the tcp-http client
 $ node client.js
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTMyNTgzMTA5Nl19
+eyJoaXN0b3J5IjpbMTk4NzM5NjIwMF19
 -->
