@@ -184,20 +184,6 @@ Go to the repo directory
 ```
 $ cd alexa_inegration/agi
 ```
-Following files should be present
-```
-agi
-	├─ Sounds
-	│  ├─ alexa_another.sln     	//  Alexa audio
-	│  ├─ alexa_example.sln     	//  Alexa audio 
-	│  └─ alexa_hello.sln       	//  Alexa audio 
-	├─ grant_token.sh           	//  Get the refresh token
-	├─ necti.php                	//  Main AGI script
-	├─ phpagi-asmanager.php     	//  Part of PHPAGI library
-	├─ phpagi-fastagi.php       	//  Part of PHPAGI library
-	├─ phpagi.php               	//  Part of PHPAGI library
-	└─ token.pl                 	//  Get the access token
-```
 Copy the sound files
 ```
 $ sudo cp Sounds/alexa*.sln /usr/share/asterisk/sounds/custom/
@@ -437,5 +423,5 @@ Start the tcp-http client
 $ node client.js
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTEzNDYyMzY3NF19
+eyJoaXN0b3J5IjpbNjQ3MjEwMDAxXX0=
 -->
