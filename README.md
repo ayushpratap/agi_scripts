@@ -217,7 +217,7 @@ exten => 5555,n,System(/home/{YOUR MACHINE NAME}/token.pl)
 exten => 5555,n,Playback(./custom/alexa_hello)
 exten => 5555,n,Playback(./custom/alexa_example)
 ; Alexa API integration
-exten => 5555,n(record),agi(alexa.agi,en-us)
+exten => 5555,n(record),agi(necti.php,en-us)
 ; Loop
 exten => 5555,n,Playback(./custom/alexa_another)
 exten => 5555,n,goto(record)
