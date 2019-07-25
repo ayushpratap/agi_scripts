@@ -168,6 +168,10 @@ $ sudo apt-get install -y asterisk
 ```
 ----------------
 11.	Julius
+```
+$ sudo apt-get install build-essential zlib1g-dev libsdl2-dev libasound2-dev
+$ sudo apt-get install julius
+```
 ----------------
 12.	Perl
 ```
