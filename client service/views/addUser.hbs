@@ -1,0 +1,22 @@
+<!-- views/addUser.ejs -->
+<div class="form-header">
+    <h2>Add User</h2>
+</div>
+  <form method="POST" action="/api/addUser" novalidate>
+    <div class="form-field">
+      <label for="Username">Username</label>
+      <input class="input" id="username" name="username" type="text" value="" />
+    </div>
+    <div class="form-field">
+      <label for="extension">Extension</label>
+      <input class="input" id="extension" name="extension" type="text" value="" />
+    </div>
+    <div class="form-field">
+        <label for="mobile">Mobile Number</label>
+        <input class="input" id="mobile" name="mobile" type="text" value="" />
+      </div>
+    <div class="form-actions">
+      <button class="btn" type="submit">Add User</button>
+    </div>
+  </form>
+  
