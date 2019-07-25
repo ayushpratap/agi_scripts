@@ -175,50 +175,88 @@ $ sudo apt-get install perl
 ```
 ----------------
 ### Check out the code
-*	#### Checkout AGI code
-	Run following command to clone the `agi_scripts` repo
-	```
-	$ git clone https://github.com/ayushpratap/agi_scripts.git
-	```
-	Go to the repo directory
-	```
-	$ cd agi_scripts
-	```
-	Following files should be present
-	```
-		agi_scripts
-		├─ Sounds
-		│  ├─ alexa_another.sln     //  Alexa audio
-		│  ├─ alexa_example.sln     //  Alexa audio 
-		│  └─ alexa_hello.sln       //  Alexa audio 
-		├─ grant_token.sh           //  Get the refresh token
-		├─ necti.php                //  Main AGI script
-		├─ phpagi-asmanager.php     //  Part of PHPAGI library
-		├─ phpagi-fastagi.php       //  Part of PHPAGI library
-		├─ phpagi.php               //  Part of PHPAGI library
-		└─ token.pl                 //  Get the access token
-	```
-	Copy the sound files
-	```
-	$ sudo cp sounds/alexa*.sln /usr/share/asterisk/sounds/custom/
-	$ sudo chown asterisk:asterisk /usr/share/asterisk/agi-bin/alexa.agi
-	$ sudo chown asterisk:asterisk /etc/avs_audio.json
-	$ sudo chown asterisk:asterisk /usr/share/asterisk/sounds/custom/alexa*.sln
-	```
-	
-	Copy `grant_token.sh` and `token.pl` in home directory of your machine
-	```
-	$ sudo cp grant_token.sh /home/{YOUR MACHINE NAME}/grant_token.sh
-	$ sudo cp token.pl /home/{YOUR MACHINE NAME}/token.pl
-	```
-	Copy  `necti.php` , `phpagi-asmanager.php` , `phpagi-fastagi.php` , `phpagi.php` to `/usr/share/asterisk/agi-bin/`
-	```
-	$ sudo cp necti.php /usr/share/asterisk/agi-bin/necti.php
-	$ sudo cp phpagi-asmanager.php /usr/share/asterisk/agi-bin/phpagi-asmanager.php
-	$ sudo cp phpagi-fastagi.php /usr/share/asterisk/agi-bin/phpagi-fastagi.php
-	$ sudo cp phpagi /usr/share/asterisk/agi-bin/phpagi.php
-	```
-### Checkout client service code
+Run the following command to checkout the code source
+```
+$ git clone https://github.com/ayushpratap/alexa_inegration.git
+```
+### Setup AGI
+Go to the repo directory
+```
+$ cd alexa_inegration/agi
+```
+Following files should be present
+```
+	agi
+	├─ Sounds
+	│  ├─ alexa_another.sln     //  Alexa audio
+	│  ├─ alexa_example.sln     //  Alexa audio 
+	│  └─ alexa_hello.sln       //  Alexa audio 
+	├─ grant_token.sh           //  Get the refresh token
+	├─ necti.php                //  Main AGI script
+	├─ phpagi-asmanager.php     //  Part of PHPAGI library
+	├─ phpagi-fastagi.php       //  Part of PHPAGI library
+	├─ phpagi.php               //  Part of PHPAGI library
+	└─ token.pl                 //  Get the access token
+```
+Copy the sound files
+```
+$ sudo cp Sounds/alexa*.sln /usr/share/asterisk/sounds/custom/
+$ sudo chown asterisk:asterisk /usr/share/asterisk/agi-bin/necti.php
+$ sudo chown asterisk:asterisk /usr/share/asterisk/sounds/custom/alexa*.sln
+```
+Copy `grant_token.sh` and `token.pl` in home directory of your machine
+```
+$ sudo cp grant_token.sh /home/{YOUR MACHINE NAME}/grant_token.sh
+$ sudo cp token.pl /home/{YOUR MACHINE NAME}/token.pl
+```
+Copy  `necti.php` , `phpagi-asmanager.php` , `phpagi-fastagi.php` , `phpagi.php` to `/usr/share/asterisk/agi-bin/`
+```
+$ sudo cp necti.php /usr/share/asterisk/agi-bin/necti.php
+$ sudo cp phpagi-asmanager.php /usr/share/asterisk/agi-bin/phpagi-asmanager.php
+$ sudo cp phpagi-fastagi.php /usr/share/asterisk/agi-bin/phpagi-fastagi.php
+$ sudo cp phpagi /usr/share/asterisk/agi-bin/phpagi.php
+```
+Edit the `/etc/asterisk/extensions.conf` file and apend the the following code in that file.
+
+>; AMAZON ALEXA VOICE
+[alexa_tts]
+exten => 5555,1,Answer()
+; Get an AWS Token
+exten => 5555,n,System(/home/{YOUR MACHINE NAME}/token.pl)
+; Play prompts
+exten => 5555,n,Playback(./custom/alexa_hello)
+exten => 5555,n,Playback(./custom/alexa_example)
+; Alexa API integration
+exten => 5555,n(record),agi(alexa.agi,en-us)
+; Loop
+exten => 5555,n,Playback(./custom/alexa_another)
+exten => 5555,n,goto(record)
+
+Add the following line to extensions.conf so that the extension is dial-able locally.
+-	Edit /etc/asterisk/extensions.conf
+-	Locate the section called [local]
+-	Add a line “include => alexa_tts”
+
+Edit the `/etc/asterisk/sip.conf` file and apend the the following code in that file.
+>[5555]
+type=friend
+username=5555
+fromuser=5555
+host=dynamic
+context=local
+insecure=port
+qualify=500
+dtmfmode=rfc2833
+disallow=all
+allow=ulaw
+obtained
+progressinband=no
+nat=no
+mailbox=5555
+callerid=5555
+
+**Reboot the machine**
+
 ### Register the product with AVS
 
 #### 1.	Create an Amazon developer account
@@ -369,8 +407,34 @@ You are now ready to try out your Asterisk Alexa interface.
 
 9.	Reboot the system
 
-### Setup AGI
-	
+
+###	Setup the client service
+Go to the directory 
+```
+$ cd alexa_inegration/client\ service/
+```
+Install the node modules
+```
+$ npm install
+```
+Start the client service 
+```
+$ node server.js
+```
+HTTP server will be started at port `https://localhost:8443`
+###	Setup tcp-http-client
+Go to directory
+```
+ cd alexa_inegration/tcp_http\ client/
+```
+Install the node modules
+```
+$ npm install
+```
+Start the tcp-http client
+```
+$ node client.js
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA2MDA0Njc2OSwyMTE4OTQzMDI3XX0=
+eyJoaXN0b3J5IjpbMTMyNTgzMTA5Nl19
 -->
