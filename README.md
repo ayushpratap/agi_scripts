@@ -260,7 +260,7 @@ Log in to  [developer.amazon.com](https://developer.amazon.com/login.html). You 
 
 If your screen doesn't look like this, try the direct link to  [AVS dashboard](https://developer.amazon.com/avs/home.html#/avs/home).
 
-`// Add the image : 1-devportal-alexa-fixed._TTH_.png`
+![alt text](/images/1-devportal-alexa-fixed._TTH_.png)
 
 If this is your first time using AVS, you'll see a welcome screen. Click the  **GET STARTED**  button, then click the  **CREATE PRODUCT**  button.
 
@@ -290,12 +290,14 @@ If you're a returning developer, click the blue  **CREATE PRODUCT**  button at t
     **Security Profile ID**  will be generated for you.
     
 3.  Select  **Other devices and platforms**  from the  _Web - Android/Kindle - iOS - Other devices and platforms_options in the  **Platform Information**  section.
-`// Add image : 1-otherdevicesplatforms-fixed._TTH_.png
-`
+
 ![alt text](/images/1-otherdevicesplatforms-fixed._TTH_.png)
+
 	-	Write a name for your Client ID here - you can just use  **Prototype**.
 	-	Click "Generate ID". You should get a Client ID and an option to download it.
-`//	Add image : 1-otherdevicesplatforms2._TTH_.png`
+
+![alt text](/images/1-otherdevicesplatforms2._TTH_.png)
+
 -   Check the box beside  _I agree to the AVS agreement and the AVS Program Requirements._
     -   Click  **FINISH**.
 
@@ -303,15 +305,19 @@ Click OK on the prompt to continue. Your device should now be listed on your  [A
 
 #### 5. Enable your security profile for commercial distribution
 1.	Open a web browser, and visit [https://developer.amazon.com/loginwithamazon/console/site/lwa/overview.html](https://developer.amazon.com/loginwithamazon/console/site/lwa/overview.html).
-`//	Add image : avs-lwa-new-security-profile._TTH_.png`
+
+![alt text](/images/avs-lwa-new-security-profile._TTH_.png)
 
 2. Near the top of the page, select the commercial device security profile you created earlier from the drop-down menu and click the **CONFIRM** button.
-`// Add image : avs-lwa-choose-security-profile._TTH_.png`
+
+![alt text](/images/avs-lwa-choose-security-profile._TTH_.png)
 
 3.	Enter your privacy policy URL beginning with http:// or https://.
 4.	You may upload an image. The image will be shown on the Login with Amazon consent page to give your users context.
 5.	Click the **SAVE** button.
-`//	Add image : avs-privacy-url_v2._TTH_.png`
+
+![alt text](/images/avs-privacy-url_v2._TTH_.png)
+
 #### 6. Setup authentication
 1. Copy the URL below to a notepad removing any newlines and EDIT to insert YOURCLIENTID and YOURPRODUCTID (NOT Client Secret) and Paste to your browser.
 ```
