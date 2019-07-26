@@ -292,6 +292,7 @@ If you're a returning developer, click the blue  **CREATE PRODUCT**  button at t
 3.  Select  **Other devices and platforms**  from the  _Web - Android/Kindle - iOS - Other devices and platforms_options in the  **Platform Information**  section.
 `// Add image : 1-otherdevicesplatforms-fixed._TTH_.png
 `
+![alt text](/images/1-otherdevicesplatforms-fixed._TTH_.png)
 	-	Write a name for your Client ID here - you can just use  **Prototype**.
 	-	Click "Generate ID". You should get a Client ID and an option to download it.
 `//	Add image : 1-otherdevicesplatforms2._TTH_.png`
